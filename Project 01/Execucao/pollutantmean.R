@@ -11,8 +11,12 @@ getfilepath <- function (directory, id){
 }
 
 pollutantmean <- function(directory, pollutant, id = 1:332) {
-
-    
-  ##   Return the mean of the pollutant across all monitors list
-  ## in the 'id' vector (ignoring NA values)
+  
+  oxide = array()
+  for (i in id){
+    data = read.table(getfilepath(directory, i), header = T, sep = ',')
+    oxide = c(oxide, data[,c(pollutant)])
+  }
+  
+  mean(oxide, na.rm = T)
 }
