@@ -10,14 +10,15 @@ getfilepath <- function (directory, id){
   paste(directory, filename, sep = "/")
 }
 
-pollutantmean <- function(directory, pollutant, id = 1:332) {
-
-  oxide = array()
+complete <- function(directory, id = 1:332) {
+  
+  df <- data.frame(id=integer(length(id)), nobs=integer(length(id)))
+  r = 1
   for (i in id){
     data = read.table(getfilepath(directory, i), header = T, sep = ',')
-    oxide = c(oxide, data[,c(pollutant)])
+    df$id[r] = i
+    df$nobs[r] = sum(!is.na(data$nitrate) & !is.na(data$sulfate))
+    r <- r + 1
   }
-  
-  mean(oxide, na.rm = T)
-  
+  df
 }
