@@ -13,12 +13,12 @@ getfilepath <- function (directory, id){
 }
 
 corr <- function(directory, threshold = 0) {
-  aCorr = array()
+  aCorr = c()
   nobs = complete(directory)
   for (i in 1:nrow(nobs)){
     if (nobs$nobs[i] > threshold){
       data = read.table(getfilepath(directory, i), header = T, sep = ',')
-      aCorr = rbind(aCorr, cor(data$sulfate, data$nitrate, use = 'pairwise.complete.obs'))
+      aCorr = c(aCorr, cor(data$sulfate, data$nitrate, use = 'pairwise.complete.obs'))
     }
   }
   aCorr
