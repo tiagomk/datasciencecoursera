@@ -1,3 +1,5 @@
+library(dplyr)
+
 #
 # Purpose:
 #
@@ -100,7 +102,7 @@ getFile <- function (fileArray, ext){
 #
 merge <- function(dir1 = 'test', dir2 = 'train', outDir = 'total', subdir = ''){
   
-  root = paste(file.path(Sys.getenv("USERPROFILE"),"Desktop",fsep="\\"), 'Data Scientist Specialization/Project 03/Execucao/UCI HAR Dataset', sep = '/')
+  root = paste(file.path(Sys.getenv("USERPROFILE"),"Desktop",fsep="\\"), 'Pessoais/Data Scientist Specialization/Project 03/Execucao/UCI HAR Dataset', sep = '/')
   
   ext1 = getExt(dir1)
   ext2 = getExt(dir2)
@@ -122,10 +124,12 @@ merge <- function(dir1 = 'test', dir2 = 'train', outDir = 'total', subdir = ''){
       
       setwd(dir1)
       dataset1 <- data.table(read.table(getFile(getFileArray(fileObj), ext1), stringsAsFactors=F))
+      df1 <- tbl_df(dataset1)
       setwd(root)
       
       setwd(dir2)
       dataset2 <- data.table(read.table(getFile(getFileArray(fileObj), ext2), stringsAsFactors=F))
+      df2 <- tbl_df(dataset2)
       setwd(root)
       
       dataset1 <- rbind(dataset1, dataset2, use.names=T, fill=F)
@@ -139,7 +143,7 @@ merge <- function(dir1 = 'test', dir2 = 'train', outDir = 'total', subdir = ''){
       if (subdir == '') subdir = fileObj
       else subdir = paste(subdir, fileObj, sep = '/')
       
-      merge(dir1, dir2, extOut, subdir)
+      #merge(dir1, dir2, extOut, subdir)
       
     }
   }    
