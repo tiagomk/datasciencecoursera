@@ -110,6 +110,7 @@ total.x <- tbl_df(total.x)
 setwd('..');setwd('..')
 
 total.dataset <- cbind(total.subject, total.y, total.x)
+total.dataset <- tbl_df(total.dataset)
 
 rm(total.subject)
 rm(total.y)
