@@ -1,18 +1,19 @@
 # CodeBook
+==========
 
-* Data
+## Data
 
-1. total.dataset
+* total.dataset
 
-> Dataset containing the total dataset merged from both test and train sets, with all variables from **Activity**, **Subject**, and each of the **Inertial Signals* registered in the 'features.txt' file (look for it inside the zip file).
+> Dataset containing the total dataset merged from both test and train sets, with all variables from **Activity**, **Subject**, and each of the **Inertial Signals** registered in the 'features.txt' file (look for it inside the zip file).
 
-2. total.tidyset
+* total.tidyset
 
-> Tidy Dataset containing the mean value calculated from every **Inertial Signal** from every activity window, groupd by **Activity** and **Subject.
+> Tidy Dataset containing the mean value calculated from every **Inertial Signal** from every activity window, groupd by **Activity** and **Subject**.
 
-* Variables
+## Variables
 
-1. activity
+* activity
 
 > One from six possibilities: 
 > 1. WALKING
@@ -22,10 +23,10 @@
 > 5. STANDING
 > 6. LAYING
 
-2. subject
+* subject
 
 > A number from 1 to 30 indexing the subject id.
 
-3. activity.mean
+* activity.mean
 
-> The mean value calculated from every **Intertial Signal** and **activity window**, grouped by activity and subject.
+> The mean value calculated from every **Intertial Signal** and **activity window**, grouped by *activity* and *subject*.
