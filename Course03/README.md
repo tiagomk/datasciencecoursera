@@ -13,4 +13,4 @@ The file is self-explanatory.
 
 3. Thirdly, it composes the **total dataset** containing all the activities, subjects and Inertial Signals for each activity window.
 
-4. Finally, it summarizes the total dataset to a **tidy dataset** with the mean of all Inertials Signals and activity windows for a specific activity and subject.
+4. Finally, it summarizes the total dataset to a **tidy dataset** with the mean of all Inertials Signals and activity windows for a specific activity and subject, saving it to the file 'tidyset.txt'.

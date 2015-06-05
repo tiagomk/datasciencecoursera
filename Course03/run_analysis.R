@@ -183,3 +183,5 @@ total.tidyset <- total.tidyset %>%
 View(total.tidyset)
 # Prints the total tidy set
 print(total.tidyset)
+# Saves tidy dataset to root directory
+write.table(total.tidyset, 'tidyset.txt', row.name=FALSE)
