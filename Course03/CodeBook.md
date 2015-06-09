@@ -12,7 +12,7 @@
 
 ## Variables
 
-* activity
+* activity (- No Units)
 
 > One from six possibilities: 
 > 1. WALKING
@@ -22,10 +22,10 @@
 > 5. STANDING
 > 6. LAYING
 
-* subject
+* subject (- No Units)
 
 > A number from 1 to 30 indexing the subject id.
 
-* activity.mean
+* activity.mean (- Units: meter / second)
 
 > The mean value calculated from every **Intertial Signal** and **activity window**, grouped by *activity* and *subject*.
