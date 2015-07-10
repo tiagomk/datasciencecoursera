@@ -1,3 +1,5 @@
+#library(dplyr)
+
 rankall <- function(outcome, num = "best") {
   data <- read.csv("dataset/outcome-of-care-measures.csv", colClasses = "character")
   
@@ -16,14 +18,21 @@ rankall <- function(outcome, num = "best") {
   rankedHospitals = matrix(ncol = 2, nrow = length(states))
   
   for (s in 1:length(states)){
+    #hospitals <- tbl_df(data)
     hospitals <- data[data[,'State']==states[s],]
     hospitals[,c(jCol)] <- as.numeric(hospitals[,c(jCol)])
+    return(hospitals)
+    orderedHospitals <- order(hospitals[,c(jCol)], hospitals[,'Hospital.Name'])
+    #orderedHospitals <- hospitals %>% filter(State == states[s]) %>% select(Hospital.Name, jCol)
     
-    orderedHospitals <- order(hospitals[,c(jCol)], hospitals[,'Hospital.Name'], na.last = NA)
-
     notFound <- F
     if (num == 'best') num <- 1
-    if (num == 'worst') num <- length(orderedHospitals)
+    if (num == 'worst')
+      for (r in nrow(hospitals):1)
+        #if (is.na(hospitals[orderedHospitals,c(jCol)][r])){
+          num <- r
+          break;
+        #}
     if (num > nrow(hospitals)) notFound <- T
     
     if (notFound == T) rankedHospitals[s, 1] <- NA
@@ -34,6 +43,6 @@ rankall <- function(outcome, num = "best") {
   
   rankedHospitals = data.frame(rankedHospitals)
   colnames(rankedHospitals) <- c('hospital', 'state')
-  
+
   return(rankedHospitals)
 }
