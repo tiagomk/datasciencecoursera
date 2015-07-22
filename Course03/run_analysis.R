@@ -1,3 +1,12 @@
+# Checks if the required packages are installed:
+# 1. dplyr
+# 2. tidyr
+# If they are not, then install them.
+if ("dplyr" %in% rownames(installed.packages()) == FALSE)
+  install.packages("dplyr")
+if ("tidyr" %in% rownames(installed.packages()) == FALSE)
+  install.packages("tidyr")
+
 # These commands load the librarys dplyr and tidyr
 # for data manipulation.
 library(dplyr)
