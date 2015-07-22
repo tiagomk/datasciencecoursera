@@ -2,7 +2,7 @@
 
 ## Data
 
- total.dataset
+* total.dataset
 
 Dataset containing the total dataset merged from both test and train sets, with all variables from **Activity**, **Subject**, and each of the **Inertial Signals** registered in the 'features.txt' file (look for it inside the zip file).
 
