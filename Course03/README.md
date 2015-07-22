@@ -1,6 +1,6 @@
 # README File to explain 'run_analysis.R' Script
 
-For the Script to run, extract the [files from the dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) to the root directory.
+For the Script to run, position the [zip file containing the dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into the current working directory, in the same level as the run_analysis.R script.
 
 
 
