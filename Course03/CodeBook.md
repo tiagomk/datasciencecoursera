@@ -12,7 +12,7 @@ Tidy Dataset containing the mean value calculated from every **Inertial Signal**
 
 ## Variables
 
-* activity (- No Units)
+* activity (No Units)
 
 One from six possibilities: 
 1. WALKING
@@ -22,10 +22,10 @@ One from six possibilities:
 5. STANDING
 6. LAYING
 
-* subject (- No Units)
+* subject (No Units)
 
 A number from 1 to 30 indexing the subject id.
 
-* activity.mean (- Units: meter / second)
+* activity.mean (Units: meter / second)
 
 The mean value calculated from every **Intertial Signal** and **activity window**, grouped by *activity* and *subject*.
